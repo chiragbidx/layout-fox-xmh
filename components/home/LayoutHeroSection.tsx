@@ -13,24 +13,24 @@ export const LayoutHeroSection = () => {
             <span className="mr-2 text-primary">
               <Badge variant="default">New</Badge>
             </span>
-            <span>Landyze Agency Next.js Starter</span>
+            <span>Landyze Next.js Agency Starter</span>
           </Badge>
           <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">
             <h1>
-              Launch
+              Launch your&nbsp;
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                Agencies & SaaS
+                agency or SaaS app
               </span>
-              faster than ever
+              &nbsp;with confidence
             </h1>
           </div>
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            Landyze is a modern, minimal Next.js 16 starter template—built for ship-speed outcomes with React 19, TypeScript and team-ready design. No fuss, all flow.
+            Landyze is the production-ready Next.js 16, React 19, TypeScript 5 starter — built for ambitious agencies, SaaS, and product teams. Ship in days, not weeks.
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4">
             <Button asChild className="w-5/6 md:w-1/4 font-bold group/arrow">
               <Link href="#contact">
-                Get in touch
+                Let's connect
                 <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -40,7 +40,7 @@ export const LayoutHeroSection = () => {
               className="w-5/6 md:w-1/4 font-bold"
             >
               <Link href="#features">
-                See the features
+                Explore Landyze
               </Link>
             </Button>
           </div>
