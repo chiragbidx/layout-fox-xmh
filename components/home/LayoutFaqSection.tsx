@@ -13,30 +13,30 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is Panda free to start with?",
-    answer: "Yes. You can start with the core template and customize it for your product.",
+    question: "Is Landyze free to start with?",
+    answer: "Yes. You can use the Landyze starter for free and take it to production without vendor lock-in.",
     value: "item-1",
   },
   {
-    question: "Can I use this for a production SaaS app?",
+    question: "Is Landyze suitable for agencies or only SaaS?",
     answer:
-      "Yes. The starter is designed for production-minded teams with scalable structure and reusable UI patterns.",
+      "Landyze was designed for agencies, SaaS startups, and product teams — anyone who needs a flexible, reliable Next.js starter.",
     value: "item-2",
   },
   {
-    question: "Does it support dark mode and responsive design?",
+    question: "Does it support dark mode, theming, and mobile?",
     answer:
-      "Yes. The template includes theme support and responsive layouts across major sections.",
+      "Absolutely. Landyze is fully responsive and includes a modern, accessible theme system and dark mode support.",
     value: "item-3",
   },
   {
-    question: "Can I plug in my own auth and billing provider?",
-    answer: "Yes. The structure is provider-agnostic and easy to adapt for your stack.",
+    question: "Can I use my own auth, payments, or backend?",
+    answer: "Yes. Landyze is provider-agnostic and can be extended with your preferred tools and integrations.",
     value: "item-4",
   },
   {
-    question: "How quickly can I launch with Panda?",
-    answer: "Most teams can ship an MVP in days by reusing existing sections and starter patterns.",
+    question: "How quickly can my agency launch with Landyze?",
+    answer: "Agencies and SaaS teams often go from zero to production MVP in less than a week using Landyze.",
     value: "item-5",
   },
 ];
@@ -50,7 +50,7 @@ export const LayoutFaqSection = () => {
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold">
-          Common Questions
+          Landyze — Agency & product launch Q&amp;A
         </h2>
       </div>
 
