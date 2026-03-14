@@ -11,27 +11,27 @@ interface BenefitsProps {
 const benefitList: BenefitsProps[] = [
   {
     icon: "Blocks",
-    title: "Ship With Confidence",
+    title: "Ready for Launch",
     description:
-      "Start from proven architecture and avoid redoing auth, layout, and deployment setup.",
+      "Landyze's architecture gets your agency project, SaaS MVP, or client dashboard live in days.",
   },
   {
     icon: "LineChart",
-    title: "Faster Time To Revenue",
+    title: "Accelerated Revenue",
     description:
-      "Focus on product validation while the starter handles the repetitive engineering basics.",
+      "Jump instantly to product value — the platform handles boilerplate, env setup, and design system.",
   },
   {
     icon: "Wallet",
-    title: "Lower Build Cost",
+    title: "Efficient Budgets",
     description:
-      "Reusable components and patterns reduce rework and keep your team moving efficiently.",
+      "Stop reinventing auth, landing flows, or UI scaffolding. Get proven code, polish, and support.",
   },
   {
     icon: "Sparkle",
-    title: "Cleaner UX By Default",
+    title: "First-Class UX",
     description:
-      "Responsive sections, dark mode, and polished UI primitives create a premium first impression.",
+      "Sections adapt for your agency's brand. Modern theme, dark mode, and accessible defaults built-in.",
   },
 ];
 
@@ -40,14 +40,13 @@ export const LayoutBenefitsSection = () => {
     <section id="benefits" className="container py-24 sm:py-32">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <div>
-          <h2 className="text-lg text-primary mb-2 tracking-wider">Why Panda</h2>
+          <h2 className="text-lg text-primary mb-2 tracking-wider">Why Landyze</h2>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            A practical SaaS app builder starter
+            The starter that grows with your agency
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Built for teams that want production-ready foundations with room to
-            customize, not a rigid template you outgrow in a week.
+            Built for founders and agencies who need real production security, flexibility, and performance — not a toy template you'll need to rip out.
           </p>
         </div>
 
