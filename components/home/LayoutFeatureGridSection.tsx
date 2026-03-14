@@ -11,39 +11,39 @@ interface FeaturesProps {
 const featureList: FeaturesProps[] = [
   {
     icon: "TabletSmartphone",
-    title: "Responsive By Default",
+    title: "Mobile-first, Always",
     description:
-      "Every section is optimized for mobile and desktop without extra layout work.",
+      "Every section and visual is responsive out of the box for agency sites, SaaS dashboards, and studios.",
   },
   {
     icon: "BadgeCheck",
-    title: "Battle-Tested Patterns",
+    title: "Production-Grade Patterns",
     description:
-      "Uses dependable UI and architecture conventions teams can maintain long-term.",
+      "Landyze follows industry standards — modern architecture, reusable UI, real performance.",
   },
   {
     icon: "Goal",
-    title: "Product-Focused Structure",
+    title: "Easy Customization",
     description:
-      "Clear section hierarchy designed to communicate value and drive activation.",
+      "Modular section layout lets your team swap, add, or edit blocks with no headaches.",
   },
   {
     icon: "PictureInPicture",
-    title: "Polished Visual Foundation",
+    title: "Professional Visuals",
     description:
-      "Modern cards, spacing, and motion cues that are easy to extend for your brand.",
+      "Cards, spacing, and motion that communicate premium value to clients and customers.",
   },
   {
     icon: "MousePointerClick",
-    title: "Conversion-Ready CTA Flow",
+    title: "Optimized for Conversion",
     description:
-      "Strategic calls-to-action and section order help users move to signup quickly.",
+      "Section hierarchy and CTA patterns designed for demo/sales pipelines or agency leads.",
   },
   {
     icon: "Newspaper",
-    title: "Documentation-Friendly",
+    title: "Documented & Maintainable",
     description:
-      "Readable code and section boundaries make onboarding new contributors easier.",
+      "Clear boundaries, typed props, and extensible config mean your next dev onboards fast.",
   },
 ];
 
@@ -55,12 +55,11 @@ export const LayoutFeatureGridSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What you get out of the box
+        Landyze — everything you really need
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Panda combines developer speed and production-grade UX so you can spend
-        your time shipping features instead of rebuilding starter infrastructure.
+        Landyze helps you deliver agency or SaaS projects quickly, safely, and with fewer product emergencies.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
