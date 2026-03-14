@@ -12,9 +12,29 @@ import { LayoutTeamSection } from "../components/home/LayoutTeamSection";
 import { LayoutTestimonialSection } from "../components/home/LayoutTestimonialSection";
 import { Navbar as LayoutNavbar } from "@/components/layout/navbar";
 
+export const metadata = {
+  title: "Landyze — Modern Next.js Agency App Starter",
+  description:
+    "Landyze is the minimal, production-hardened Next.js 16 App Router template. React 19, TypeScript, Tailwind and Postgres-ready. Perfect for SaaS, startups, and modern agencies.",
+  openGraph: {
+    title: "Landyze — Modern Next.js Agency App Starter",
+    description:
+      "Landyze jumpstarts your SaaS or agency project with a fully responsive, production-grade Next.js 16 starter, TypeScript, React 19, and built-in team workflows.",
+    url: process.env.BASE_URL ?? "https://landyze.com",
+    images: [
+      {
+        url: "/hero-image-light.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Landyze Dashboard Preview",
+      },
+    ],
+    siteName: "Landyze",
+    type: "website",
+  },
+};
+
 export default function Home() {
-  // Simple toggles so agents/users can hide sections without touching JSX.
-  // Use ONLY_SECTIONS (comma list) to whitelist, or HIDE_SECTIONS to blacklist.
   const only = (process.env.ONLY_SECTIONS ?? "")
     .split(",")
     .map((s) => s.trim().toLowerCase())
@@ -49,7 +69,6 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col gap-12 px-6 py-12 sm:px-10 lg:px-16 lg:max-w-[1600px] lg:mx-auto">
         {visibleSections.map(([, node]) => node)}
       </main>
-
       {/* lightweight animations defined locally to avoid tailwind config changes */}
       <style>{`
         @keyframes float {
