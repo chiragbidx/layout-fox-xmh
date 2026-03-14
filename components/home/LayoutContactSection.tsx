@@ -27,6 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(255),
@@ -37,24 +38,43 @@ const formSchema = z.object({
 });
 
 export const LayoutContactSection = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
-      subject: "Starter Demo",
+      subject: "Landyze Starter Demo",
       message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const { firstName, lastName, email, subject, message } = values;
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setError(null);
+    setSubmitted(false);
 
-    const mailToLink = `mailto:hello@panda.dev?subject=${subject}&body=Hello, I am ${firstName} ${lastName}. My email is ${email}. %0D%0A${message}`;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    window.location.assign(mailToLink);
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data?.error || "Failed to send message.");
+        return;
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (err) {
+      setError("Failed to send your inquiry. Please try again later.");
+    }
   }
 
   return (
@@ -66,45 +86,51 @@ export const LayoutContactSection = () => {
               Contact
             </h2>
 
-            <h2 className="text-3xl md:text-4xl font-bold">Talk to the Panda team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Talk to Landyze</h2>
           </div>
           <p className="mb-8 text-muted-foreground lg:w-5/6">
-            Need help customizing the starter, planning architecture, or
-            accelerating launch? Share your goals and timeline.
+            Want a custom implementation or help with your product launch? Get in touch and we'll respond quickly.
           </p>
 
           <div className="flex flex-col gap-4">
             <div>
               <div className="flex gap-2 mb-1">
                 <Building2 />
-                <div className="font-bold">Find us</div>
+                <div className="font-bold">Headquarters</div>
               </div>
 
-              <div>Remote-first • San Francisco, CA</div>
+              <div>Remote-first • San Francisco, CA, USA</div>
             </div>
 
             <div>
               <div className="flex gap-2 mb-1">
                 <Phone />
-                <div className="font-bold">Call us</div>
+                <div className="font-bold">Contact</div>
               </div>
 
-              <div>+1 (415) 555-0199</div>
+              <div>(not public)</div>
             </div>
 
             <div>
               <div className="flex gap-2 mb-1">
                 <Mail />
-                <div className="font-bold">Email us</div>
+                <div className="font-bold">Email</div>
               </div>
 
-              <div>hello@panda.dev</div>
+              <div>
+                <a
+                  href="mailto:hi@chirag.co"
+                  className="underline decoration-dotted underline-offset-2"
+                >
+                  hi@chirag.co
+                </a>
+              </div>
             </div>
 
             <div>
               <div className="flex gap-2">
                 <Clock />
-                <div className="font-bold">Visit us</div>
+                <div className="font-bold">Hours</div>
               </div>
 
               <div>
@@ -116,7 +142,13 @@ export const LayoutContactSection = () => {
         </div>
 
         <Card className="bg-muted/60 dark:bg-card">
-          <CardHeader className="text-primary text-2xl"> </CardHeader>
+          <CardHeader className="text-primary text-2xl">
+            {submitted ? (
+              <span className="text-green-700 dark:text-green-300">Your message was sent! We'll be in touch soon.</span>
+            ) : (
+              <> </> // Keep empty for minimalism
+            )}
+          </CardHeader>
           <CardContent>
             <Form {...form}>
               <form
@@ -131,7 +163,7 @@ export const LayoutContactSection = () => {
                       <FormItem className="w-full">
                         <FormLabel>First Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Leopoldo" {...field} />
+                          <Input placeholder="Your first name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -144,14 +176,13 @@ export const LayoutContactSection = () => {
                       <FormItem className="w-full">
                         <FormLabel>Last Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Miranda" {...field} />
+                          <Input placeholder="Your last name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-
                 <div className="flex flex-col gap-1.5">
                   <FormField
                     control={form.control}
@@ -171,7 +202,6 @@ export const LayoutContactSection = () => {
                     )}
                   />
                 </div>
-
                 <div className="flex flex-col gap-1.5">
                   <FormField
                     control={form.control}
@@ -189,18 +219,17 @@ export const LayoutContactSection = () => {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="Starter Demo">
-                              Starter Demo
+                            <SelectItem value="Landyze Starter Demo">
+                              Landyze Starter Demo
                             </SelectItem>
-                            <SelectItem value="Architecture Review">
-                              Architecture Review
+                            <SelectItem value="Agency Build">
+                              Agency Build
                             </SelectItem>
-                            <SelectItem value="Design System">
-                              Design System
+                            <SelectItem value="Custom Integration">
+                              Custom Integration
                             </SelectItem>
-                            <SelectItem value="Billing Integration">Billing Integration</SelectItem>
-                            <SelectItem value="Enterprise Plan">
-                              Enterprise Plan
+                            <SelectItem value="Enterprise Inquiry">
+                              Enterprise Inquiry
                             </SelectItem>
                           </SelectContent>
                         </Select>
@@ -209,7 +238,6 @@ export const LayoutContactSection = () => {
                     )}
                   />
                 </div>
-
                 <div className="flex flex-col gap-1.5">
                   <FormField
                     control={form.control}
@@ -220,23 +248,25 @@ export const LayoutContactSection = () => {
                         <FormControl>
                           <Textarea
                             rows={5}
-                            placeholder="Tell us about your SaaS idea, stage, and timeline..."
+                            placeholder="How can we help your team?"
                             className="resize-none"
                             {...field}
                           />
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-
-                <Button className="mt-4">Send inquiry</Button>
+                {error ? (
+                  <div className="text-red-600 dark:text-red-400 text-sm">{error}</div>
+                ) : null}
+                <Button className="mt-4" disabled={submitted}>
+                  {submitted ? "Sent!" : "Send inquiry"}
+                </Button>
               </form>
             </Form>
           </CardContent>
-
           <CardFooter></CardFooter>
         </Card>
       </section>
