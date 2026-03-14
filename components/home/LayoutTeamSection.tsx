@@ -175,7 +175,7 @@ export const LayoutTeamSection = () => {
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold">
-          Meet the Panda team
+          Meet the Landyze team
         </h2>
       </div>
 
