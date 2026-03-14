@@ -28,34 +28,33 @@ const reviewList: ReviewProps[] = [
   {
     image: "/demo-img.jpg",
     name: "Aarav Shah",
-    userName: "Founder, FinchFlow",
+    userName: "Agency Founder, FinchFlow",
     comment:
-      "Panda saved us weeks of setup. We launched our first paying plan in less than a sprint.",
+      "Landyze helped us launch an agency portal in record time. The team moved twice as fast, and clients loved the polish.",
     rating: 5.0,
   },
   {
     image: "/demo-img.jpg",
     name: "Maya Patel",
-    userName: "Product Lead, OrbitDesk",
+    userName: "Lead Product Designer, OrbitStudio",
     comment:
-      "The section structure and component quality made it easy to ship a polished onboarding flow quickly.",
+      "The structure and section system in Landyze made it painless to deliver a professional onboarding site for our agency.",
     rating: 4.8,
   },
-
   {
     image: "/demo-img.jpg",
     name: "Nikhil Rao",
     userName: "CTO, TeamForge",
     comment:
-      "We replaced our old starter with Panda and reduced front-end rework dramatically.",
+      "We transitioned to Landyze and instantly got a better developer workflow — less refactor, happier clients, beautiful UI.",
     rating: 4.9,
   },
   {
     image: "/demo-img.jpg",
     name: "Emma Brooks",
-    userName: "Head of Growth, Nimbus",
+    userName: "Head of Growth, Nimbus.io",
     comment:
-      "The default layout is conversion-friendly and easy to adapt to our brand.",
+      "Conversion rates jumped after we started using Landyze’s CTA-driven layout. The agency site finally feels as good as our SaaS.",
     rating: 5.0,
   },
   {
@@ -63,15 +62,15 @@ const reviewList: ReviewProps[] = [
     name: "Daniel Kim",
     userName: "Engineering Manager, PulseOps",
     comment:
-      "Great developer ergonomics. New engineers onboarded fast and started shipping immediately.",
+      "I was able to onboard new engineers right away with Landyze. Docs, code, layout — everything is truly maintainable.",
     rating: 5.0,
   },
   {
     image: "/demo-img.jpg",
     name: "Sofia Green",
-    userName: "Founder, LaunchPad AI",
+    userName: "Co-founder, LaunchPad AI",
     comment:
-      "Exactly what we needed for an MVP: clean code, strong UI, and a sensible section flow.",
+      "Exactly what we needed for our SaaS MVP: clean, extensible, and agency-class design with a dev-friendly foundation.",
     rating: 4.9,
   },
 ];
@@ -85,7 +84,7 @@ export const LayoutTestimonialSection = () => {
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-          Teams shipping with Panda
+          Agencies & teams moving faster with Landyze
         </h2>
       </div>
 
